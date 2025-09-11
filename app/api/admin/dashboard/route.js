@@ -1,8 +1,8 @@
 
 import { NextResponse } from "next/server"
 import { getAuth } from "@clerk/nextjs/server";
-import authSeller from "@/middlewares/authSeller";
 import prisma from "@/lib/prisma";
+import authAdmin from "@/middlewares/authAdmin";
 
 // get dashabord data for admin (total orders, total stores, total products, total revenue)
 
@@ -36,14 +36,14 @@ export async function GET(request) {
 
         const products = await prisma.product.count()
 
-        const dashabordData = {
+        const dashboardData = {
             orders,
             stores,
             products,
             revenue,
             allOrders
         }
-        return NextResponse.json({dashabordData})
+        return NextResponse.json({dashboardData})
 
     } catch (error) {
         console.log(error)
