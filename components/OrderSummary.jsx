@@ -1,11 +1,12 @@
 import { PlusIcon, SquarePenIcon, XIcon } from 'lucide-react';
 import React, { useState } from 'react'
 import AddressModal from './AddressModal';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { Protect, useAuth, useUser } from '@clerk/nextjs';
 import axios from 'axios';
+import { fetchCart } from '@/lib/features/cart/cartSlice';
 
 const OrderSummary = ({ totalPrice, items }) => {
 
@@ -13,6 +14,7 @@ const OrderSummary = ({ totalPrice, items }) => {
     const {user} = useUser();
     const {getToken} = useAuth();
     const router = useRouter();
+    const dispatch = useDispatch()
 
     const addressList = useSelector(state => state.address.list);
 
@@ -41,8 +43,39 @@ const OrderSummary = ({ totalPrice, items }) => {
 
     const handlePlaceOrder = async (e) => {
         e.preventDefault();
+        try {
+            if(!user){
+                return toast("Please Login to place an order.")
+            }
+            if(!selectedAddress){
+                return toast("Please select an address.")
+            }
 
-        router.push('/orders')
+            const token = await getToken();
+            const orderData = {
+                addressId: selectedAddress.id,
+                items,
+                paymentMethod
+            }
+            if(coupon){
+                orderData.couponCode = coupon.code
+            }
+            // create order
+            const {data} = await axios.post('/api/orders', orderData, {
+                headers:{Authorization: `Bearer ${token}`}
+            })
+            if(paymentMethod === 'STRIPE'){
+                window.location.href = data.session.url;
+            }else{
+                toast.success(data.message)
+                router.push('/orders')
+                dispatch(fetchCart({getToken}))
+            }
+            
+            
+        } catch (error) {
+            toast.error(error?.response?.data?.error || error.message)
+        }
     }
 
     return (
