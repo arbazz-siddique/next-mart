@@ -223,7 +223,7 @@ Please include tests and check linting locally before requesting review.
 
 MIT License — see `LICENSE` for details.
 Project: [https://github.com/arbazz-siddique/next-mart](https://github.com/arbazz-siddique/next-mart)
-Contact: arbazz-siddique (GitHub) — or add your email / Twitter handle here.
+Contact: arbazz-siddique (GitHub)  - email: **[arbazzsiddique104@gmail.com](mailto:arbazzsiddique104@gmail.com)**
 
 ---
 
@@ -234,5 +234,3 @@ This README is a living document — if you want, I can also:
 * Add a ready-to-commit `.env.example` file, or
 * Add a short CONTRIBUTING.md template, or
 * Generate a short video script (voice-over + on-screen steps) specifically tailored to your repo structure.
-
-Which of these would you like next?
