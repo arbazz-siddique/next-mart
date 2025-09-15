@@ -59,8 +59,8 @@ const Navbar = () => {
           <div className="hidden sm:flex items-center gap-6 text-slate-600 relative">
             <Link href="/">Home</Link>
             <Link href="/shop">Shop</Link>
-            <Link href="/">About</Link>
-            <Link href="/">Contact</Link>
+            <Link href="/about">About</Link>
+            <Link href="/contact">Contact</Link>
 
             {/* Search */}
             <form
