@@ -52,7 +52,7 @@ const Navbar = () => {
               <p className="absolute text-xs font-semibold -top-1 -right-8 px-3 rounded-full text-white bg-green-500">
                 plus
               </p>
-            </Protect>
+            </Protect> 
           </Link>
 
           {/* Desktop Menu */}
