@@ -1,0 +1,26 @@
+[33m5ce7d4e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Implement autosuggestion for search
+[33mb9f44c0[m Implemet an ai feature to automatically wirte title and description for the product for seller
+[33mee21c14[m fiex strip webhook
+[33m911049d[m updated prigma config for edge
+[33mfdf95e9[m Implement strip payment method
+[33m2cbc166[m Implement paymnet method api as well as implement on forntend
+[33m37b057b[m Implement coupon API and very in frontend side
+[33mb28d303[m Implement feature for plus member and pricing table
+[33m407abc5[m Implement functionality of address
+[33m6b19065[m Implement cart functionality
+[33m4771478[m Implement product feature, showing on home page
+[33m45cbe2f[m Implement address API
+[33m47996c9[m Implement API for cart and products
+[33mf1dad8a[m Implement seller dashboard
+[33m665558d[m Implement api for getting order list and update order status
+[33m978d594[m fixed api call for coupon page
+[33m94d837d[m implement inggest function added for coupon for side work to delete automatically
+[33m1a39a7a[m implement coupon functionality like create,delete,and get all coupons. with discout expires etc
+[33m7ab9e80[m Implement admin dashboard functionality
+[33m4a3a77b[m Implement admin only view the page of admin
+[33m84ba306[m implement api for admin and story , dashboard
+[33m57517b6[m Implement dashboard api
+[33mf11f742[m Implement API for store like create, dashboard, dataofproduct, isSeller, product, stock and added imageKits and middlewares
+[33m6e921c9[m fix the prisma command
+[33m87b95df[m updated package.json file
+[33mf960c10[m Implemented inggest function
